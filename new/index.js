@@ -41,24 +41,34 @@
 //let xArr = ["A" , 0 , "A" , 1 , "B" , 12]
 
 
-let xArr = ["A", 0, 1, "B", true, false];
 
-let s = 0;
-let n = 0;
-let b = 0;
+//1. Easy – Sum of All Elements
+//Problem: Given an array of numbers, return the sum of all elements.
 
-for (let i = 0; i < xArr.length; i++) {
-  if (typeof xArr[i] === "string") {
-    s = s + 1;
-  }
-  if (typeof xArr[i] === "number") {
-    n = n + 1;
-  }
-  if (typeof xArr[i] === "boolean") {
-    b += 1;
-  }
+function sumArray(arr) {
+    let sum = 0; 
+    for (let i = 0; i < arr.length; i++) { 
+        sum += arr[i]; 
+    }
+    return sum; 
 }
 
-console.log("string:", s);
-console.log("number:", n);
-console.log("boolean:", b);
+console.log(sumArray([1, 2, 3, 4])); 
+
+
+
+
+//2. Medium – Remove Duplicates
+//Problem: Write a function that removes duplicates from an array.
+
+function removeDuplicates(arr) {
+    let uniqueArr = []; 
+    for (let i = 0; i < arr.length; i++) { 
+        if (uniqueArr.indexOf(arr[i]) === -1) { 
+            uniqueArr.push(arr[i]); 
+        }
+    }
+    return uniqueArr; 
+}
+
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); 
